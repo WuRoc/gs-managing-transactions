@@ -36,13 +36,13 @@ public class BookingService {
     @Transactional
     public void book(String... persons) {
         for (String person : persons) {
-            logger.info("Booking " + person + "in a sent...");
-            jdbcTemplate.update("insert into BOOKINGS(FIRST_NAME) value (?)", person);
+            logger.info("Booking " + person + " in a sent...");
+            jdbcTemplate.update("insert into BOOKINGS(FIRST_NAME) values (?)", person);
         }
     }
 
     public List<String> findAllBookings() {
-        return jdbcTemplate.query("SELECT FIRST_NAME from BOOKINGS", (rs, rowNum) ->
+        return jdbcTemplate.query("select FIRST_NAME from BOOKINGS", (rs, rowNum) ->
                 rs.getString("FIRST_NAME")
         );
     }
