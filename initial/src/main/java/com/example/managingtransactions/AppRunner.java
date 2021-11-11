@@ -65,7 +65,7 @@ public class AppRunner implements CommandLineRunner {
         }
 
         logger.info("你不应该看到Buddy或者null。 null 违反数据库约束，Buddy 是被回滚在相同的TX");
-
+        //这个expression必须是正确的，否则会抛异常
         Assert.isTrue(bookingService.findAllBookings().size() == 3, "null 应该触发回滚");
 
     }
