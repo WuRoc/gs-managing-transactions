@@ -2,13 +2,17 @@ package com.example.managingtransactions;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
 /**
  * @ClassName AppRunner
- * @Description TODO
+ * @Description SpringBoot提供了两个接口来帮助我们实现这种需求。这两个接口分别为CommandLineRunner
+ * 和ApplicationRunner。它们的执行时机是容器启动完成后。
+ * 二者的功能和官方文档一模一样，都是在容器初始化完毕之后执行起run方法 这两个接口的不同之处在于：ApplicationRunner中run方法的参数为ApplicationArguments，*而CommandLineRunner接口中run方法的参数为String数组
  * @Author XiaoShuMu
  * @Version 1.0
  * @Create 2021-11-11 10:11
